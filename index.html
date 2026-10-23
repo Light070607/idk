@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hiệu ứng nền Hố đen</title>
+<style>
+body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+#hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vw;
+  background-image: radial-gradient(circle, #fff 0%, #fff 20%, #ffcc00 40%, #ff9900 60%, #ff3300 80%, #000 100%);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #fff 1%, #fff 2%, transparent 3%);
+  animation: twist 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes twist {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+<body>
+  <div id="hole"></div>
+  <div id="stars"></div>
+</body>
+</html>
